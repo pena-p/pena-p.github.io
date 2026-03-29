@@ -152,7 +152,7 @@
       color: black;
       text-decoration: underline;
     }
-    
+
     .interests {
       margin-top: 2rem;
       padding-top: 1.5rem;
@@ -233,6 +233,7 @@
     }
 
     .pub-apa {
+      font-family: var(--serif);
       font-size: 0.95rem;
       line-height: 1.6;
       color: #3a3830;
@@ -240,7 +241,7 @@
 
     .pub-apa .apa-title { }
     .pub-apa .apa-journal { font-style: italic; }
-    .pub-apa .apa-bold { font-weight: 700!important; }
+    .pub-apa .apa-bold { font-weight: 700; }
 
     .pub-links {
       display: flex;
@@ -261,6 +262,68 @@
     }
 
     .pub-links a:hover { border-bottom-color: var(--accent); }
+
+    /* ── PROJECTS ── */
+    .project-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-item:first-of-type {
+      border-top: 1px solid var(--border);
+    }
+
+    .project-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.6rem 2rem;
+    }
+
+    .project-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .project-meta-label {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .project-meta-value {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #3a3830;
+    }
+
+    .project-participation {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-participation .project-meta-label {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-participation .project-meta-value {
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
 
     /* ── CV ── */
     .cv-download {
@@ -318,6 +381,7 @@
       section { padding: 5.5rem 1.5rem 4rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .photo-wrap { position: static; width: 140px; }
+      .project-meta { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -325,27 +389,28 @@
 
 <nav>
   <ul class="nav-links">
-    <li><a href="#" class="active" data-tab="about">About</a></li>
-    <li><a href="#" data-tab="publications">Publications</a></li>
-    <li><a href="#" data-tab="cv">CV</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#cv">CV</a></li>
   </ul>
 </nav>
 
 <!-- ── ABOUT ── -->
-<section id="about" class="active">
+<section id="about">
   <div class="about-grid">
     <div class="photo-wrap">
-     <img src="assets/photo.jpg" alt="Paula Pena">
+      <img src="assets/photo.jpg" alt="Paula Pena">
     </div>
     <div class="about-text">
       <h1>Paula Pena</h1>
       <p class="title">PhD candidate · <a href="https://cimcyc.ugr.es/en" target="_blank" class="hyperlink-muted">Mind, Brain and Behavior Research Center</a> · University of Granada</p>
 
       <p>
-        Hi, I am a PhD Student from the <a href="https://wpd.ugr.es/~humneuro/" target="_blank" class="hyperlink-black">Human Neuroscience Lab</a> at the University of Granada. 
-        My research focuses on the influence of cognitive control in the brain’s representational dynamics.
-        By combining machine learning techniques with neuroimaging, I try to understand the computations 
-        implemented by the brain under varying control demands. 
+        Hi, I am a PhD Student from the <a href="https://wpd.ugr.es/~humneuro/" target="_blank" class="hyperlink-black">Human Neuroscience Lab</a> at the University of Granada.
+        My research focuses on the influence of cognitive control in the brain's representational dynamics.
+        By combining machine learning techniques with neuroimaging, I try to understand the computations
+        implemented by the brain under varying control demands.
       </p>
 
       <div class="interests">
@@ -361,7 +426,7 @@
 
       <div class="contact-row">
         <a href="mailto:paulapena@ugr.es">paulapena@ugr.es</a>
-        <!--<a href="https://scholar.google.com" target="_blank">Google Scholar</a> -->
+        <!--<a href="https://scholar.google.com" target="_blank">Google Scholar</a>-->
         <a href="https://github.com/pena-p" target="_blank">GitHub</a>
         <a href="https://bsky.app/profile/paulapena.bsky.social" target="_blank">Bluesky</a>
       </div>
@@ -378,7 +443,7 @@
 
     <div class="pub-item">
       <p class="pub-apa">
-        Richter D., Pena P. &amp;  Ruz M. (2025).
+        Richter D., Pena P. &amp; Ruz M. (2025).
         <span class="apa-title">Rapid computation of high-level visual surprise.</span>
         <span class="apa-journal">iScience</span>, <span class="apa-bold">28.</span>
       </p>
@@ -402,6 +467,41 @@
   </div>
 </section>
 
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <p class="section-heading">Projects</p>
+
+  <!-- Example project — duplicate this block to add more -->
+  <div class="project-item">
+    <p class="project-name">Project name here</p>
+    <div class="project-meta">
+      <div class="project-meta-item">
+        <span class="project-meta-label">Funded by</span>
+        <span class="project-meta-value">Funding body / agency</span>
+      </div>
+      <div class="project-meta-item">
+        <span class="project-meta-label">PI</span>
+        <span class="project-meta-value">Principal Investigator name</span>
+      </div>
+      <div class="project-meta-item">
+        <span class="project-meta-label">Duration</span>
+        <span class="project-meta-value">2023 – 2026</span>
+      </div>
+      <div class="project-meta-item">
+        <span class="project-meta-label">Amount</span>
+        <span class="project-meta-value">€000,000</span>
+      </div>
+    </div>
+    <div class="project-participation">
+      <span class="project-meta-label">My participation</span>
+      <p class="project-meta-value">Describe your role and contributions to this project.</p>
+    </div>
+  </div>
+
+  <!-- Add more project blocks here -->
+
+</section>
+
 <!-- ── CV ── -->
 <section id="cv">
   <a href="assets/cv.pdf" class="cv-download" download>Download Full CV (PDF)</a>
@@ -418,20 +518,33 @@
 </footer>
 
 <script>
-  var links = document.querySelectorAll('.nav-links a');
+  var TABS = ['about', 'publications', 'projects', 'cv'];
+
+  var navLinks = document.querySelectorAll('.nav-links a');
   var sections = document.querySelectorAll('section');
 
-  links.forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var tab = this.getAttribute('data-tab');
+  function getHashTab() {
+    var hash = window.location.hash.replace('#', '');
+    return TABS.includes(hash) ? hash : 'about';
+  }
 
-      links.forEach(function(l) { l.classList.remove('active'); });
-      sections.forEach(function(s) { s.classList.remove('active'); });
+  function showTab(tab) {
+    navLinks.forEach(function(l) { l.classList.remove('active'); });
+    sections.forEach(function(s) { s.classList.remove('active'); });
 
-      link.classList.add('active');
-      document.getElementById(tab).classList.add('active');
-    });
+    var targetSection = document.getElementById(tab);
+    if (targetSection) targetSection.classList.add('active');
+
+    var targetLink = document.querySelector('.nav-links a[href="#' + tab + '"]');
+    if (targetLink) targetLink.classList.add('active');
+  }
+
+  // On load: read hash and show correct tab
+  showTab(getHashTab());
+
+  // On hash change (back/forward navigation)
+  window.addEventListener('hashchange', function() {
+    showTab(getHashTab());
   });
 </script>
 </body>
